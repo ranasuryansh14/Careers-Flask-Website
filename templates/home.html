@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Careers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit:cover;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://9f221851-c65f-414d-9d13-749858788d5e-00-3snybpuqklbl2.riker.replit.dev/static/banner.png" >
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">
+        {{company_name}} Careers
+      </h1>
+      <div class="row" style="margin-bottom:32px">
+        <div class="col-md-6">
+      <p class="lead">
+        <h2>Join Our Team - Become a Council Member for the DSW Department of Student Welfare!</h2>
+        Are you passionate about making a difference in student life? We're looking for dedicated individuals to join our team as council members for the Department of Student Welfare at CGC Landran. As a council member, you'll have the opportunity to:
+        <ul>
+          <li>
+            Advocate for student needs and concerns
+            </li>
+          <li>
+            Organize impactful events and initiatives
+            </li>
+          <li>
+            Collaborate with fellow students and faculty
+          </li>
+            <li>
+            Shape policies that enhance student well-being
+          </li>
+        </ul>
+      </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+        <img src="/static/people.jpg" style="height:320px;border-radius:4px;">
+        </div>
+      </div>
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+      <a class="btn btn-primary btn-lg" href="https://www.linkedin.com/in/suryanshrana14/">Contact me</a>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>
